@@ -1,6 +1,8 @@
-# Supersimpler DDNS Client für PowerShell von ugg.li
+# Very Simple DDNS Client für PowerShell von ugg.li
+# Github: https://github.com/weed-/simple-dyndns-uppdate/
+# GPLv2
 
-# --- configuration ---
+# --- configuration
 $updateURL = "https://kunden.aditsystems.de/liveconfig/hosting/dnsupdate"
 $hostname = "datenschleuder.gehirnbrand.de"
 $username = "datenschleuder"
@@ -14,7 +16,7 @@ $ipv4 = (Resolve-DnsName myip.opendns.com -Server 208.67.222.222 -Type A).IPAddr
 # --- IPv6 Präfix (z. B. /64) extrahieren, ggf. Prefix-Länge anpassen!
 $ipv6Prefix = ($ipv6 -split ":")[0..3] -join ":"
 
-# --- Alte Werte laden (falls vorhanden) ---
+# --- Alte Werte laden (falls vorhanden)
 $oldIPv4 = $null
 $oldIPv6Prefix = $null
 
@@ -29,7 +31,7 @@ if ($ipv4 -ne $oldIPv4 -or $ipv6Prefix -ne $oldIPv6Prefix) {
     Write-Host "Neue IP, Update wird gesendet ..."
     curl.exe --user "${username}:${password}" "${updateURL}?hostname=${hostname}&myip=${ipv4}&myip6=${ipv6}"
 
-    # --- neue Werte speichern ---
+    # --- neue Werte speichern
     $newState = @{
         ipv4 = $ipv4
         ipv6Prefix = $ipv6Prefix
@@ -38,4 +40,3 @@ if ($ipv4 -ne $oldIPv4 -or $ipv6Prefix -ne $oldIPv6Prefix) {
 } else {
     Write-Host "Keine Aenderung der IP, kein Update."
 }
-
