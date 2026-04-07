@@ -1,5 +1,5 @@
 # simple-dyndns-uppdate
-A very simple PowerShell script that handles IPv4 und IPv6 DDNS (DynDNS) updates. Idea stolen from ugg.li. Must be installed on every, if v6 is used. This is not a 'centralized' solution.
+A very simple PowerShell script that handles IPv4 und IPv6 DDNS (DynDNS) updates. Idea stolen from ugg.li. Must be installed on every machine, if IPv6 is used. This is not a 'centralized' solution.
 
 ## Features
 - Custom Update URL (works everwhere)

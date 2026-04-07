@@ -3,10 +3,10 @@
 # GPLv2
 
 # --- configuration
-$updateURL = "https://kunden.aditsystems.de/liveconfig/hosting/dnsupdate"
-$hostname = "datenschleuder.gehirnbrand.de"
-$username = "datenschleuder"
-$password = "yorEcJuawpows-a33"
+$updateURL = "https://YOUR-DDNS-ISP.EXAMPLE.COM/URL/dnsupdate"
+$hostname = "MYHOSTNAME.EXAMPLE.COM"
+$username = "USERNAME"
+$password = "PASSWORD"
 $stateFile = "$env:ProgramData\simple-ddns-script_state.json"
 
 # --- IPs holen (v4 und v6)
